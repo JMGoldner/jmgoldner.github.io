@@ -16,5 +16,4 @@ flowchart TD
     J -- No --> L[Display: Too Low! Try Again]
     L --> C
 
-Start([Start]) --> End([End])
 ```
