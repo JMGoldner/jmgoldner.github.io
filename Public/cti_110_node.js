@@ -6,17 +6,21 @@ const app = express();
 const router = express.Router();
 const path = require('path');
 
+// Temp fix
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+//
+
 // This part sets up the database
 const {Pool} = require('pg');
 // You may need to modify the password or database name in the following line:
-const connectionString = `postgres://postgres:CTI_110_WakeTech@localhost/Gradebook`;
+const connectionString = `postgres://postgres:CTI_110_WakeTech@localhost/public/gradebook_jgoldner.sql`;
 // The default password is CTI_110_WakeTech
 // The default database name is Gradebook
 const pool = new Pool({connectionString:connectionString})
 
 // This line says when it's looking for a file linked locally,
 // check in sub-folder "public"
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 
 // This creates a new anonymous function that runs whenever 
 // someone calls "get" on the server root "/"
@@ -58,3 +62,4 @@ let server = app.listen(3000, function(){
     console.log("App Server via Express is listening on port 3000");
     console.log("To quit, press CTRL + C");
 });
+

@@ -21,6 +21,10 @@ function fetchGradeData() {
     xhr.send();
 }
 
+//Test
+res.setHeader('Content-Type', 'application/javascript');
+//
+
 // TODO: Populate the table with grade data
 function populateGradebook(data) {
     // This function will take the fetched grade data and populate the table
